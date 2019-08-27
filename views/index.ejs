@@ -37,15 +37,17 @@
             <th>Edita</th>
             <th>Deleta</th>
         </tr>
+        <% Produtos.forEach(function(produto){ %>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><%=produto._id %></td>
+            <td><%=produto.marca %></td>
+            <td><%=produto.tipo %></td>
+            <td><%=produto.cor %></td>
+            <td><%=produto.valor %></td>
             <td></td>
             <td></td>            
         </tr>
+        <%})%>
     </table>
     <%if(typeof msg != "undefined"){%>
     <h1><%=msg%></h1>
