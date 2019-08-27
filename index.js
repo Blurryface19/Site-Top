@@ -29,7 +29,6 @@ app.get('/',function(req,res){
     )
 })
 
-
 app.get('/cadastro',function(req,res){
     res.render('cadastro.ejs',{})
 })
@@ -47,5 +46,14 @@ app.post('/cadastro', function(req,res){
         } else {
             res.render('cadastro.ejs', { "msg": 'Adicionado com sucesso' })
         }
+    })
+})
+app.get('/deletar/:id',function(req,res){
+    Produto.findById(req.params.id,function(err,produto){
+        produto.remove(function(err,docs){
+            Produto.find({}).lean().exec(function(err,docs){
+                res.render('index.ejs',{"Produtos": docs, msg:"Deletado com Sucesso!"})
+            })
+        })
     })
 })

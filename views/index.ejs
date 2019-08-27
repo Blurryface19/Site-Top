@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <img src="/img/caminho.png">
+    <img src="/img/download.jpeg">
     <h1>Loja de roupas</h1>
     <ul>
         <li><a href="/">Listar</a></li>
@@ -45,7 +45,7 @@
             <td><%=produto.cor %></td>
             <td><%=produto.valor %></td>
             <td></td>
-            <td></td>            
+            <td><a href="/deletar/<%=produto._id %>"><img style="width:30px;" src="/img/download.png"></a></td>            
         </tr>
         <%})%>
     </table>
